@@ -199,7 +199,7 @@
 
         function megjelenitFunc(cimke) {
             document.getElementById('illatNevField').innerHTML = cimke.illatNev.value;
-            document.getElementById('warning1').innerHTML = "Figyelmeztetések".value;
+            document.getElementById('warning1').innerHTML = "Figyelmeztetések";
             document.getElementById('batchSzamField').innerHTML = cimke.batchSzam.value;
             document.getElementById('UFIField').innerHTML = cimke.UFI.value;
             document.getElementById('gyartoNevField').innerHTML = cimke.gyartoNev.value;
@@ -222,6 +222,12 @@
                 $('.rounded-container').height(containerWidth);
             });
         });
+
+        $(window).on('resize', function() {
+        var containerWidth = $('#elonezetCimke').width();
+        var fontSize = containerWidth * 0.04; // 2% of container width
+        $('.rounded-container-text').css('font-size', fontSize + 'px');
+    });
 
     </script>
 </body>
